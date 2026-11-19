@@ -1,11 +1,10 @@
 import { PATHS } from '@/app/paths';
-import { aboutHero, team } from '@/data/about';
+import { aboutHero } from '@/data/about';
 import Button from '@/components/ui/Button/Button';
 import FullBleedHero from '@/components/shared/FullBleedHero/FullBleedHero';
-import { getInitials } from '@/utils/getInitials';
-import styles from './AboutHeroSection.module.css';
+import TeamworkIllustration from './TeamworkIllustration';
 
-/** Hero de Nosotros: pantalla completa con las fotos del equipo en abanico. */
+/** Hero de Nosotros: pantalla completa con una ilustración de trabajo en equipo. */
 export default function AboutHeroSection() {
   const { badge, titleStart, titleHighlight, titleEnd, text, backgroundImage } = aboutHero;
 
@@ -30,27 +29,7 @@ export default function AboutHeroSection() {
           </Button>
         </>
       }
-      visual={
-        <ul className={styles.team}>
-          {team.map((member) => (
-            <li key={member.name} className={styles.member}>
-              <div className={styles.photoBox}>
-                {member.photo ? (
-                  <img src={member.photo} alt={`Foto de ${member.name}`} className={styles.photo} />
-                ) : (
-                  <span className={styles.initials} aria-hidden="true">
-                    {getInitials(member.name)}
-                  </span>
-                )}
-              </div>
-              <div className={styles.caption}>
-                <b>{member.name.split(' ')[0]}</b>
-                <span>{member.role}</span>
-              </div>
-            </li>
-          ))}
-        </ul>
-      }
+      visual={<TeamworkIllustration />}
     />
   );
 }

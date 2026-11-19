@@ -5,7 +5,7 @@ import styles from './TeamSection.module.css';
 
 export default function TeamSection() {
   return (
-    <section className="section section--soft">
+    <section id="equipo" className={`section section--soft ${styles.section}`}>
       <div className="container">
         <SectionHeading badge="Equipo" title="Las personas detrás de EduSoft" />
         <ul className={styles.grid} data-reveal-stagger>

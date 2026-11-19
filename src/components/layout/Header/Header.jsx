@@ -11,14 +11,16 @@ import ScrollProgress from '@/components/layout/ScrollProgress/ScrollProgress';
 import { useScrollProgress } from '@/hooks/useScrollProgress';
 import styles from './Header.module.css';
 
+/** Páginas con hero de pantalla completa: la cabecera es transparente hasta hacer scroll. */
+const OVERLAY_PATHS = [PATHS.home, PATHS.about];
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { progress, scrolled } = useScrollProgress();
   const { pathname } = useLocation();
   const closeMenu = () => setMenuOpen(false);
 
-  // En Inicio la cabecera es transparente sobre el hero de pantalla completa hasta que se hace scroll.
-  const overlay = pathname === PATHS.home && !scrolled && !menuOpen;
+  const overlay = OVERLAY_PATHS.includes(pathname) && !scrolled && !menuOpen;
   const headerClasses = [styles.header, scrolled && styles.scrolled, overlay && styles.overlay].filter(Boolean).join(' ');
 
   return (

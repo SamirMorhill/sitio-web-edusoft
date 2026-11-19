@@ -9,7 +9,7 @@ const teamPhoto = null;
 
 export default function StorySection() {
   return (
-    <section className="section">
+    <section id="historia" className={`section ${styles.section}`}>
       <div className={`container ${styles.grid}`}>
         <div data-reveal="left">
           <SectionHeading align="left" badge="Nuestra historia" title="Quiénes somos" lead={company.summary} />

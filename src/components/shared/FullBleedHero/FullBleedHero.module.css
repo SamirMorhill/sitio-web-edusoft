@@ -1,0 +1,186 @@
+/* Hero de pantalla completa: de borde a borde y del alto de la ventana. */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  /* Sube por debajo de la cabecera (alto + 1px de borde) */
+  margin-top: calc((var(--header-height) + 1px) * -1);
+  padding: calc(var(--header-height) + 48px) 0 140px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--color-purple-dark) 0%, var(--color-purple) 55%, var(--color-purple-light) 100%);
+}
+
+/* Capas de fondo */
+.background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Velo para que el texto se lea sobre una foto de fondo */
+.background::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgba(44, 29, 68, 0.94) 0%, rgba(62, 42, 92, 0.82) 50%, rgba(62, 42, 92, 0.45) 100%);
+}
+
+.ring {
+  position: absolute;
+  width: 760px;
+  height: 760px;
+  border: 3px solid var(--color-lavender);
+  border-radius: 50%;
+  right: -220px;
+  top: -260px;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.glow {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  background: var(--color-teal);
+  filter: blur(140px);
+  opacity: 0.35;
+  left: -160px;
+  bottom: -200px;
+  z-index: 1;
+}
+
+/* Trama sutil de puntos que se desvanece hacia abajo */
+.dots {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.09) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: linear-gradient(180deg, #000 0%, transparent 85%);
+}
+
+/* Contenido */
+.layout {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.title {
+  font-size: clamp(36px, 5.4vw, 64px);
+  line-height: 1.08;
+  font-weight: 800;
+  margin: 20px 0;
+  letter-spacing: -0.5px;
+}
+
+.title span {
+  color: var(--color-teal-bright);
+}
+
+.text {
+  font-size: 19px;
+  color: var(--color-on-dark);
+  max-width: 560px;
+  margin-bottom: 36px;
+}
+
+.actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Indicador para bajar */
+.scrollHint {
+  position: absolute;
+  left: 50%;
+  bottom: 84px;
+  transform: translateX(-50%);
+  opacity: 0.75;
+  transition: opacity var(--transition);
+}
+
+.scrollHint:hover {
+  opacity: 1;
+}
+
+.mouse {
+  display: block;
+  width: 24px;
+  height: 38px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 14px;
+  position: relative;
+}
+
+.mouse::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 7px;
+  width: 4px;
+  height: 8px;
+  margin-left: -2px;
+  border-radius: 2px;
+  background: #fff;
+  animation: scroll-hint 1.8s ease-in-out infinite;
+}
+
+@keyframes scroll-hint {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .visual {
+    max-width: 560px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: calc(var(--header-height) + 32px) 0 120px;
+  }
+
+  .text {
+    font-size: 17px;
+  }
+
+  /* En celulares el hero entra completo en la pantalla */
+  .visual {
+    display: none;
+  }
+
+  .scrollHint {
+    bottom: 76px;
+  }
+}

@@ -1,9 +1,10 @@
 .map {
-  position: relative;
+  display: grid;
+  grid-template-columns: minmax(260px, 340px) 1fr;
   height: 420px;
   border-radius: var(--radius-xl);
   overflow: hidden;
-  background: var(--color-bg-soft);
+  background: #fff;
   box-shadow: var(--shadow-card);
 }
 
@@ -15,16 +16,12 @@
 }
 
 .card {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  max-width: 340px;
   display: flex;
+  align-items: flex-start;
+  align-self: center;
   gap: 12px;
-  padding: 16px 18px;
-  background: #fff;
-  border-radius: var(--radius-md);
-  box-shadow: 0 10px 30px rgba(62, 42, 92, 0.18);
+  padding: 28px 26px;
+  order: -1;
 }
 
 .card b {
@@ -65,11 +62,10 @@
   color: var(--color-teal-dark);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 760px) {
   .map {
     height: auto;
-    display: flex;
-    flex-direction: column-reverse;
+    grid-template-columns: 1fr;
   }
 
   .frame {
@@ -77,9 +73,7 @@
   }
 
   .card {
-    position: static;
-    max-width: none;
-    border-radius: 0;
-    box-shadow: none;
+    order: 2;
+    padding: 20px 18px;
   }
 }

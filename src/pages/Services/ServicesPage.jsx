@@ -17,11 +17,9 @@ export default function ServicesPage() {
         title="Nuestras soluciones"
         text="Dos plataformas web que trabajan juntas o por separado, según lo que tu institución necesite."
       />
-      <div className="container">
-        {services.map((service, index) => (
-          <ProductSection key={service.id} service={service} reversed={index % 2 === 1} />
-        ))}
-      </div>
+      {services.map((service, index) => (
+        <ProductSection key={service.id} service={service} reversed={index % 2 === 1} />
+      ))}
       <ComparisonSection />
       <ProcessSteps badge="Implementación" title="Cómo llevamos EduSoft a tu institución" steps={homeProcess} />
       <FaqSection />

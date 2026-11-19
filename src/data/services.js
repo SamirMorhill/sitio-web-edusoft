@@ -1,27 +1,43 @@
+import scadLogo from '@/assets/images/scad/scad-logo.png';
+import scadEstablecimientos from '@/assets/images/scad/scad-establecimientos.jpg';
+
 /**
  * Plataformas que ofrece EduSoft.
- * TODO: reemplazar "[Nombre App X]" por los nombres reales de cada aplicación.
+ * - `brand` (opcional): colores propios de la aplicación. Si no está, se usa `variant` (teal | lavender).
+ * - `logo` (opcional): logo propio de la aplicación; reemplaza al ícono.
+ * - `screenshot` (opcional): captura real que se muestra en la página Servicios.
+ * TODO: reemplazar "[Nombre App 2]" por el nombre real de la segunda aplicación.
  */
 export const services = [
   {
-    id: 'gestion-academica',
+    id: 'scad',
     variant: 'teal',
-    tag: 'Aplicación web 1',
-    name: '[Nombre App 1]',
-    shortName: '[App 1]',
-    category: 'Gestión académica',
+    brand: {
+      primary: '#1f4e46',
+      accent: '#e9a23b',
+      soft: '#e6efea',
+      surface: '#fdfbf7',
+    },
+    logo: scadLogo,
+    tag: 'Aplicación web · PWA',
+    name: 'SCAD',
+    shortName: 'SCAD',
+    category: 'Control de asistencia',
     icon: 'calendar',
-    summary: 'Notas, asistencia, boletines y seguimiento de actividades en un solo lugar.',
+    summary:
+      'Registro de asistencia con código QR para docentes que dictan clases en distintas sedes y extensiones de la institución.',
     description:
-      'Centraliza la administración académica y libera tiempo a docentes y directivos. Pensada para reducir hasta un 40% el tiempo dedicado a la carga de notas y asistencia.',
+      'SCAD (Sistema de Control de Asistencia) permite que cada docente registre su entrada y salida escaneando el código QR del establecimiento, con validación de ubicación. Se integra con los sistemas que ya usa la institución y puede crecer con nuevas funciones según cada cliente.',
     features: [
-      { icon: 'check', title: 'Notas y asistencia', text: 'Carga rápida por curso' },
-      { icon: 'file', title: 'Boletines automáticos', text: 'Listos para imprimir o enviar' },
-      { icon: 'chart', title: 'Reportes', text: 'Paneles para directivos' },
-      { icon: 'calendar', title: 'Seguimiento', text: 'Actividades por alumno' },
+      { icon: 'qr', title: 'Entrada y salida con QR', text: 'Registro en segundos' },
+      { icon: 'mapPin', title: 'Validación por ubicación', text: 'Confirma que el docente está en la sede' },
+      { icon: 'building', title: 'Varias sedes', text: 'Todas las extensiones en un lugar' },
+      { icon: 'smartphone', title: 'Web y app (PWA)', text: 'Se instala como app nativa' },
     ],
-    audience: 'directivos, preceptores y docentes.',
-    preview: 'dashboard',
+    audience: 'docentes que dictan clases en distintas extensiones de la institución.',
+    preview: 'screenshot',
+    screenshot: scadEstablecimientos,
+    screenshotAlt: 'Pantalla de SCAD para elegir el establecimiento donde registrar la asistencia',
   },
   {
     id: 'comunicacion-participacion',
@@ -45,10 +61,11 @@ export const services = [
   },
 ];
 
-/** Tabla comparativa: [funcionalidad, incluida en App 1, incluida en App 2] */
+/** Tabla comparativa: [funcionalidad, incluida en SCAD, incluida en App 2] */
 export const serviceComparison = [
-  { feature: 'Carga de notas y asistencia', included: [true, false] },
-  { feature: 'Boletines y reportes', included: [true, false] },
+  { feature: 'Registro de asistencia con código QR', included: [true, false] },
+  { feature: 'Validación por ubicación', included: [true, false] },
+  { feature: 'Gestión de varias sedes y extensiones', included: [true, false] },
   { feature: 'Mensajería docente-alumno', included: [false, true] },
   { feature: 'Actividades y encuestas en clase', included: [false, true] },
   { feature: 'Acceso web y desde celular', included: [true, true] },

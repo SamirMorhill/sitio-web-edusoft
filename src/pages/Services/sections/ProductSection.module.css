@@ -77,6 +77,41 @@
   color: var(--color-purple);
 }
 
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 44px;
+  height: 44px;
+}
+
+.screenshot {
+  width: 100%;
+  display: block;
+}
+
+/* Sección con los colores propios de la aplicación (ej: SCAD) */
+.branded .title,
+.branded .features b {
+  color: var(--brand-primary);
+}
+
+.branded .featureIcon {
+  color: var(--brand-primary);
+}
+
+.branded .cta {
+  background: var(--brand-primary);
+  box-shadow: none;
+}
+
+.branded .cta:hover {
+  filter: brightness(1.15);
+}
+
 @media (max-width: 900px) {
   .product {
     grid-template-columns: 1fr;

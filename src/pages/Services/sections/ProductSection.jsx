@@ -5,6 +5,7 @@ import Icon from '@/components/ui/Icon/Icon';
 import BrowserMockup from '@/components/ui/BrowserMockup/BrowserMockup';
 import DashboardPreview from '@/components/shared/DashboardPreview/DashboardPreview';
 import ChatPreview from '@/components/shared/ChatPreview/ChatPreview';
+import { getBrandStyle } from '@/utils/brandStyle';
 import styles from './ProductSection.module.css';
 
 const DASHBOARD_KPIS = [
@@ -13,17 +14,29 @@ const DASHBOARD_KPIS = [
   { value: '320', label: 'Alumnos' },
 ];
 
-function ProductPreview({ type }) {
-  if (type === 'chat') return <ChatPreview />;
+function ProductPreview({ service }) {
+  if (service.preview === 'screenshot') {
+    return <img className={styles.screenshot} src={service.screenshot} alt={service.screenshotAlt} loading="lazy" />;
+  }
+  if (service.preview === 'chat') return <ChatPreview />;
   return <DashboardPreview kpis={DASHBOARD_KPIS} showChart={false} rows={[100, 100, 100, 100, 60]} />;
 }
 
 /** Detalle de una plataforma: texto, funcionalidades y previsualización. */
 export default function ProductSection({ service, reversed = false }) {
   return (
-    <section id={service.id} className={`${styles.product} ${styles[service.variant]} ${reversed ? styles.reversed : ''}`}>
+    <section
+      id={service.id}
+      className={[styles.product, styles[service.variant], service.brand && styles.branded, reversed && styles.reversed]
+        .filter(Boolean)
+        .join(' ')}
+      style={getBrandStyle(service.brand)}
+    >
       <div className={styles.content}>
-        <Badge>{service.tag}</Badge>
+        <div className={styles.heading}>
+          {service.logo && <img src={service.logo} alt="" className={styles.logo} />}
+          <Badge>{service.tag}</Badge>
+        </div>
         <h2 className={styles.title}>
           {service.name}
           <br />
@@ -48,13 +61,13 @@ export default function ProductSection({ service, reversed = false }) {
         <p className={styles.audience}>
           <b>Ideal para:</b> {service.audience}
         </p>
-        <Button to={PATHS.contact} variant={reversed ? 'purple' : 'teal'}>
+        <Button to={PATHS.contact} variant={reversed ? 'purple' : 'teal'} className={styles.cta}>
           Solicitar demo
         </Button>
       </div>
 
       <BrowserMockup elevated="soft">
-        <ProductPreview type={service.preview} />
+        <ProductPreview service={service} />
       </BrowserMockup>
     </section>
   );

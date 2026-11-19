@@ -12,7 +12,7 @@ import { useScrollProgress } from '@/hooks/useScrollProgress';
 import styles from './Header.module.css';
 
 /** Páginas con hero de pantalla completa: la cabecera es transparente hasta hacer scroll. */
-const OVERLAY_PATHS = [PATHS.home, PATHS.about];
+const OVERLAY_PATHS = Object.values(PATHS);
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);

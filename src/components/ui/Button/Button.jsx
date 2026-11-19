@@ -4,7 +4,7 @@ import styles from './Button.module.css';
 /**
  * Botón reutilizable.
  * - `to`: navega dentro del sitio (React Router).
- * - `href`: enlace externo.
+ * - `href`: enlace externo (se abre en otra pestaña) o ancla de la misma página ("#seccion").
  * - sin ninguno: <button>.
  * variant: 'teal' | 'purple' | 'ghost' | 'white' | 'outline'
  */
@@ -20,8 +20,14 @@ export default function Button({ to, href, variant = 'teal', size = 'md', classN
   }
 
   if (href) {
+    const external = !href.startsWith('#');
     return (
-      <a href={href} className={classes} target="_blank" rel="noopener noreferrer" {...rest}>
+      <a
+        href={href}
+        className={classes}
+        {...(external && { target: '_blank', rel: 'noopener noreferrer' })}
+        {...rest}
+      >
         {children}
       </a>
     );

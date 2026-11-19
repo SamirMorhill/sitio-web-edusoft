@@ -56,16 +56,3 @@ export const team = [
     photo: fotoSamir,
   },
 ];
-
-/**
- * Hero de pantalla completa de Nosotros.
- * `backgroundImage`: foto de fondo opcional (ej: el equipo o la oficina), con velo violeta.
- */
-export const aboutHero = {
-  badge: 'Nosotros · San Miguel de Tucumán',
-  titleStart: 'Un equipo tucumano que',
-  titleHighlight: 'transforma',
-  titleEnd: 'la educación con tecnología',
-  text: 'Analizamos, diseñamos y desarrollamos software a la medida de cada institución del Norte Argentino, para que docentes y directivos dediquen más tiempo a enseñar.',
-  backgroundImage: null,
-};

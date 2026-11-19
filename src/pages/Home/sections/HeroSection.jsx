@@ -1,5 +1,5 @@
 import { PATHS } from '@/app/paths';
-import { homeHero } from '@/data/home';
+import { homeHero } from '@/data/heroes';
 import Button from '@/components/ui/Button/Button';
 import BrowserMockup from '@/components/ui/BrowserMockup/BrowserMockup';
 import FullBleedHero from '@/components/shared/FullBleedHero/FullBleedHero';
@@ -7,19 +7,11 @@ import styles from './HeroSection.module.css';
 
 /** Hero de Inicio: pantalla completa con las capturas de las dos aplicaciones. */
 export default function HeroSection() {
-  const { badge, titleStart, titleHighlight, titleEnd, text, backgroundImage, showcase } = homeHero;
-  const [back, front] = showcase;
+  const [back, front] = homeHero.showcase;
 
   return (
     <FullBleedHero
-      badge={badge}
-      title={
-        <>
-          {titleStart} <span>{titleHighlight}</span> {titleEnd}
-        </>
-      }
-      text={text}
-      backgroundImage={backgroundImage}
+      content={homeHero}
       scrollTarget="contenido"
       actions={
         <>

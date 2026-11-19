@@ -6,13 +6,15 @@ import styles from './FullBleedHero.module.css';
  * y pasa por debajo de la cabecera transparente (ver OVERLAY_PATHS en Header).
  *
  * Props:
- *  - badge, title (puede incluir <span> resaltado), text
+ *  - content: textos del hero (ver src/data/heroes.js): badge, titleStart, titleHighlight,
+ *    titleEnd, text y backgroundImage opcional (se le aplica un velo violeta)
  *  - actions: botones debajo del texto
  *  - visual: contenido de la columna derecha (se oculta en celulares)
- *  - backgroundImage: foto de fondo opcional, se le aplica un velo violeta
  *  - scrollTarget: id de la sección a la que lleva el indicador para bajar
  */
-export default function FullBleedHero({ badge, title, text, actions, visual, backgroundImage, scrollTarget }) {
+export default function FullBleedHero({ content, actions, visual, scrollTarget }) {
+  const { badge, titleStart, titleHighlight, titleEnd, text, backgroundImage } = content;
+
   return (
     <section className={styles.hero}>
       <div className={styles.background} aria-hidden="true">
@@ -30,7 +32,7 @@ export default function FullBleedHero({ badge, title, text, actions, visual, bac
             </div>
           )}
           <h1 className={`${styles.title} enter`} style={{ '--enter-delay': '120ms' }}>
-            {title}
+            {titleStart} {titleHighlight && <span>{titleHighlight}</span>} {titleEnd}
           </h1>
           {text && (
             <p className={`${styles.text} enter`} style={{ '--enter-delay': '240ms' }}>

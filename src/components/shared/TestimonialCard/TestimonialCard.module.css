@@ -42,3 +42,20 @@
   font-size: 12px;
   color: var(--color-muted);
 }
+
+/* Efecto al pasar el mouse */
+.card {
+  transition:
+    transform 0.25s var(--ease-out),
+    box-shadow 0.25s var(--ease-out),
+    background 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card);
+}
+
+.card:hover {
+  background: #fff;
+}

@@ -70,4 +70,4 @@ Funciona en modo demostración hasta configurar un servicio de envío. Copiá `.
 
 ## Publicación
 
-El sitio usa rutas limpias (`/nosotros`, `/servicios`...). Al publicarlo, el hosting debe redirigir todas las rutas a `index.html` (en Netlify y Vercel se configura con una regla de rewrite).
+El sitio usa rutas limpias (`/nosotros`, `/servicios`...). En Vercel ya está resuelto con `vercel.json`, que redirige todas las rutas a `index.html`. En otro hosting hay que configurar una regla equivalente.

@@ -1,7 +1,7 @@
 export const contactRoles = ['Directivo', 'Docente', 'Administrativo', 'Otro'];
 
 export const contactInterests = [
-  'Gestión académica',
-  'Comunicación y participación',
+  'SCAD · Control de asistencia',
+  'Asistencia de alumnos',
   'Ambas plataformas',
 ];

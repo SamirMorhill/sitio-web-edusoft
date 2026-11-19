@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 64" role="img" aria-label="Instituto Técnico Los Cardones">
+  <g><path d="M30 4l24 14v28L30 60 6 46V18z" fill="#2f6b4f"/>
+    <path d="M30 16v34M30 30h-8v-9M30 36h8v-10" stroke="#fff" stroke-width="4.5" stroke-linecap="round" fill="none"/></g>
+  <text x="66" y="28" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="1.2" fill="#2f6b4f" opacity=".75">INSTITUTO TÉCNICO</text>
+  <text x="66" y="47" font-family="'Segoe UI', Arial, sans-serif" font-size="17" font-weight="700" fill="#2f6b4f">Los Cardones</text>
+</svg>

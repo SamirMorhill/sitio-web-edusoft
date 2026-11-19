@@ -9,13 +9,13 @@ const teamPhoto = null;
 
 export default function StorySection() {
   return (
-    <section className="section">
+    <section id="historia" className={`section ${styles.section}`}>
       <div className={`container ${styles.grid}`}>
-        <div>
+        <div data-reveal="left">
           <SectionHeading align="left" badge="Nuestra historia" title="Quiénes somos" lead={company.summary} />
           <p className={styles.text}>{company.story}</p>
         </div>
-        <BrowserMockup elevated="soft">
+        <BrowserMockup elevated="soft" data-reveal="right">
           <ImagePlaceholder src={teamPhoto} alt="Equipo de EduSoft" label="FOTO DEL EQUIPO / OFICINA" />
         </BrowserMockup>
       </div>

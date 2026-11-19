@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { PATHS } from '@/app/paths';
 import { mainNavigation } from '@/data/navigation';
 import { company } from '@/data/company';
+import SmartLink from '@/components/ui/SmartLink/SmartLink';
 import { services } from '@/data/services';
 import logo from '@/assets/images/logo-edusoft.jpg';
 import styles from './Footer.module.css';
@@ -46,10 +47,10 @@ export default function Footer() {
             <h2 className={styles.title}>Seguinos</h2>
             <ul className={styles.list}>
               <li>
-                <a href={company.social.instagram} target="_blank" rel="noopener noreferrer">Instagram</a>
+                <SmartLink href={company.social.instagram}>Instagram</SmartLink>
               </li>
               <li>
-                <a href={company.social.tiktok} target="_blank" rel="noopener noreferrer">TikTok</a>
+                <SmartLink href={company.social.tiktok}>TikTok</SmartLink>
               </li>
             </ul>
           </div>

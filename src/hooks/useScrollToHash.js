@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-/** Desplaza la vista hasta el elemento indicado en el hash de la URL (ej: /servicios#gestion-academica). */
+/** Desplaza la vista hasta el elemento indicado en el hash de la URL (ej: /servicios#scad). */
 export function useScrollToHash() {
   const { hash } = useLocation();
 

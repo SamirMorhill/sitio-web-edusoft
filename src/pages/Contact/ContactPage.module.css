@@ -1,4 +1,5 @@
 .contact {
+  scroll-margin-top: calc(var(--header-height) - 10px);
   background: linear-gradient(180deg, #fff 0%, var(--color-lavender-soft) 100%);
 }
 

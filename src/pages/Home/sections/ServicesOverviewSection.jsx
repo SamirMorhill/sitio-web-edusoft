@@ -12,7 +12,7 @@ export default function ServicesOverviewSection() {
           title="Dos plataformas para el aula y la gestión"
           lead="Herramientas intuitivas y escalables, adaptadas a las necesidades de cada institución."
         />
-        <div className={styles.grid}>
+        <div className={styles.grid} data-reveal-stagger>
           {services.map((service) => (
             <ServiceCard key={service.id} service={service} />
           ))}

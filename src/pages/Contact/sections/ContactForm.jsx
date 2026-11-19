@@ -11,7 +11,7 @@ export default function ContactForm() {
   const fieldProps = (name) => ({ name, value: values[name], onChange: handleChange, error: errors[name] });
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit} noValidate>
+    <form className={styles.form} onSubmit={handleSubmit} noValidate data-reveal="right">
       <div className={styles.row}>
         <FormField label="Nombre y apellido" placeholder="Ej: María Pérez" autoComplete="name" {...fieldProps('name')} />
         <FormField label="Institución" placeholder="Nombre del colegio o instituto" {...fieldProps('institution')} />

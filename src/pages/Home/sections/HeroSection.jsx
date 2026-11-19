@@ -1,34 +1,36 @@
 import { PATHS } from '@/app/paths';
-import Badge from '@/components/ui/Badge/Badge';
+import { homeHero } from '@/data/heroes';
 import Button from '@/components/ui/Button/Button';
 import BrowserMockup from '@/components/ui/BrowserMockup/BrowserMockup';
-import DashboardPreview from '@/components/shared/DashboardPreview/DashboardPreview';
+import FullBleedHero from '@/components/shared/FullBleedHero/FullBleedHero';
 import styles from './HeroSection.module.css';
 
+/** Hero de Inicio: pantalla completa con las capturas de las dos aplicaciones. */
 export default function HeroSection() {
+  const [back, front] = homeHero.showcase;
+
   return (
-    <section className={styles.hero}>
-      <div className={`container ${styles.grid}`}>
-        <div>
-          <Badge tone="dark">Software educativo · San Miguel de Tucumán</Badge>
-          <h1 className={styles.title}>
-            Tecnología que <span>simplifica</span> la gestión de tu institución educativa
-          </h1>
-          <p className={styles.text}>
-            Plataformas digitales que integran gestión académica, comunicación entre docentes y alumnos, seguimiento de
-            actividades y participación en clase.
-          </p>
-          <div className={styles.actions}>
-            <Button to={PATHS.services}>Conocé nuestras soluciones</Button>
-            <Button to={PATHS.contact} variant="ghost">
-              Contactanos
-            </Button>
-          </div>
+    <FullBleedHero
+      content={homeHero}
+      scrollTarget="contenido"
+      actions={
+        <>
+          <Button to={PATHS.services}>Conocé nuestras soluciones</Button>
+          <Button to={PATHS.contact} variant="ghost">
+            Contactanos
+          </Button>
+        </>
+      }
+      visual={
+        <div className={styles.showcase}>
+          <BrowserMockup className={`${styles.shot} ${styles.shotBack}`}>
+            <img src={back.src} alt={back.alt} />
+          </BrowserMockup>
+          <BrowserMockup className={`${styles.shot} ${styles.shotFront}`}>
+            <img src={front.src} alt={front.alt} />
+          </BrowserMockup>
         </div>
-        <BrowserMockup>
-          <DashboardPreview />
-        </BrowserMockup>
-      </div>
-    </section>
+      }
+    />
   );
 }

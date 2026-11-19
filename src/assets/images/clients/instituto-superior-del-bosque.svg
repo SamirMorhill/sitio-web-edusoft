@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 64" role="img" aria-label="Instituto Superior del Bosque">
+  <g><circle cx="30" cy="32" r="27" fill="#34495e"/>
+    <path d="M30 12l12 16h-6l9 12H15l9-12h-6z" fill="#8fd1a6"/>
+    <rect x="27.5" y="40" width="5" height="9" rx="1" fill="#fff"/></g>
+  <text x="66" y="28" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="600" letter-spacing="1.2" fill="#34495e" opacity=".75">INSTITUTO SUPERIOR</text>
+  <text x="66" y="47" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="700" fill="#34495e">del Bosque</text>
+</svg>

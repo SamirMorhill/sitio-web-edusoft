@@ -40,4 +40,5 @@
   --shadow-teal: 0 8px 20px rgba(14, 140, 127, 0.28);
 
   --transition: 0.2s ease;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }

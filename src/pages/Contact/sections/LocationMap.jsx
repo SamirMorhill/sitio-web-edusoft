@@ -2,18 +2,34 @@ import { company } from '@/data/company';
 import Icon from '@/components/ui/Icon/Icon';
 import styles from './LocationMap.module.css';
 
-/**
- * Ubicación de la empresa.
- * TODO: reemplazar por un mapa real (por ejemplo un <iframe> de Google Maps con la dirección).
- */
+/** Ubicación de EduSoft: mapa de Google Maps con una tarjeta y enlace para llegar. */
 export default function LocationMap() {
+  const { map, location } = company;
+
   return (
     <section className="section section--flush-top">
-      <div className="container">
+      <div className="container" data-reveal>
         <div className={styles.map}>
-          <div className={styles.pin}>
-            <Icon name="mapPin" size={22} className={styles.pinIcon} />
-            {company.name} · San Miguel de Tucumán
+          <iframe
+            className={styles.frame}
+            src={map.embedUrl}
+            title={`Mapa: ${map.placeName}`}
+            loading="lazy"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
+          <div className={styles.card}>
+            <span className={styles.icon}>
+              <Icon name="mapPin" size={20} />
+            </span>
+            <div>
+              <b>{map.placeName}</b>
+              <small>{location}</small>
+              <a href={map.directionsUrl} target="_blank" rel="noopener noreferrer" className={styles.link}>
+                Cómo llegar
+                <Icon name="arrowRight" size={14} />
+              </a>
+            </div>
           </div>
         </div>
       </div>

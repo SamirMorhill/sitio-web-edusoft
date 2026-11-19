@@ -1,0 +1,290 @@
+.scene {
+  position: relative;
+  aspect-ratio: 1.15;
+  max-width: 600px;
+  margin-left: auto;
+}
+
+/* Tablero central */
+.board {
+  position: absolute;
+  inset: 14% 12% 12% 10%;
+  background: #fff;
+  border-radius: 22px;
+  padding: 26px 28px;
+  color: var(--color-ink);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.boardHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.boardHeader b {
+  display: block;
+  color: var(--color-purple);
+  font-size: 16px;
+}
+
+.boardHeader small {
+  color: var(--color-muted);
+  font-size: 12px;
+}
+
+.boardIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: var(--color-lavender-soft);
+  color: var(--color-purple);
+  flex: none;
+}
+
+.steps {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+.steps li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--color-border);
+  color: #fff;
+}
+
+.done {
+  color: var(--color-purple);
+}
+
+.done .dot {
+  background: var(--color-teal);
+  border-color: var(--color-teal);
+}
+
+.current {
+  color: var(--color-teal-dark);
+}
+
+.current .dot {
+  border-color: var(--color-teal);
+  box-shadow: 0 0 0 4px var(--color-teal-soft);
+}
+
+.progress {
+  height: 8px;
+  border-radius: 8px;
+  background: var(--color-lavender-soft);
+  overflow: hidden;
+}
+
+.progress span {
+  display: block;
+  height: 100%;
+  width: 78%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--color-teal), var(--color-lavender));
+  animation: grow 2.4s var(--ease-out) 0.8s both;
+}
+
+.bars {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  padding-top: 6px;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.bars i {
+  flex: 1;
+  border-radius: 8px 8px 0 0;
+  background: var(--color-lavender-soft);
+}
+
+.bars i:nth-child(even) {
+  background: var(--color-teal-soft);
+}
+
+.bars i:last-child {
+  background: var(--color-teal);
+}
+
+/* Tarjetas flotantes */
+.chip {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  color: var(--color-ink);
+  border-radius: 14px;
+  padding: 12px 16px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
+  animation: float 6s ease-in-out infinite;
+}
+
+.chip b {
+  display: block;
+  font-size: 14px;
+  color: var(--color-purple);
+}
+
+.chip small {
+  font-size: 12px;
+  color: var(--color-muted);
+}
+
+.chipIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  flex: none;
+  background: var(--color-teal-soft);
+  color: var(--color-teal-dark);
+}
+
+.chipAnalysis {
+  top: 2%;
+  left: 0;
+  animation-delay: 0.4s;
+}
+
+.chipDesign {
+  top: 40%;
+  right: 0;
+  animation-delay: 1.4s;
+}
+
+.chipDesign .chipIcon {
+  background: var(--color-lavender-soft);
+  color: var(--color-lavender);
+}
+
+.swatches {
+  display: flex;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.swatches i {
+  width: 16px;
+  height: 16px;
+  border-radius: 5px;
+  background: var(--color-purple);
+}
+
+.swatches i:nth-child(2) {
+  background: var(--color-teal);
+}
+
+.swatches i:nth-child(3) {
+  background: var(--color-lavender);
+}
+
+.chipDev {
+  bottom: 0;
+  left: 6%;
+  animation-delay: 2.2s;
+}
+
+.chipDev .chipIcon {
+  background: #fdf3e1;
+  color: #c98a1f;
+}
+
+.code {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 6px;
+}
+
+.code i {
+  display: block;
+  height: 6px;
+  width: 90px;
+  border-radius: 4px;
+  background: var(--color-lavender-soft);
+}
+
+.code i:nth-child(2) {
+  width: 64px;
+  background: var(--color-teal-soft);
+}
+
+.teamBadge {
+  position: absolute;
+  top: 4%;
+  right: 6%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px 8px 8px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  animation: float 7s ease-in-out 1s infinite;
+}
+
+.teamBadge small {
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.avatars {
+  display: flex;
+}
+
+.avatars i {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: var(--color-teal);
+  border: 2px solid var(--color-purple);
+}
+
+.avatars i + i {
+  margin-left: -8px;
+}
+
+.avatars i:nth-child(2) {
+  background: var(--color-lavender);
+}
+
+.avatars i:nth-child(3) {
+  background: #e0a33a;
+}
+
+@keyframes grow {
+  from {
+    width: 0;
+  }
+}

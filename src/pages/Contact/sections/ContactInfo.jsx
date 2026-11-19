@@ -1,6 +1,7 @@
 import { company } from '@/data/company';
 import SectionHeading from '@/components/ui/SectionHeading/SectionHeading';
 import Icon from '@/components/ui/Icon/Icon';
+import SmartLink from '@/components/ui/SmartLink/SmartLink';
 import styles from './ContactInfo.module.css';
 
 export default function ContactInfo() {
@@ -13,7 +14,7 @@ export default function ContactInfo() {
   ];
 
   return (
-    <div>
+    <div data-reveal="left">
       <SectionHeading
         align="left"
         badge="Datos de contacto"
@@ -27,7 +28,7 @@ export default function ContactInfo() {
             <span className={styles.icon}>
               <Icon name={item.icon} size={20} />
             </span>
-            {item.href ? <a href={item.href}>{item.label}</a> : item.label}
+            {item.href ? <SmartLink href={item.href}>{item.label}</SmartLink> : item.label}
           </li>
         ))}
       </ul>
@@ -38,14 +39,14 @@ export default function ContactInfo() {
       </div>
 
       <div className={styles.social}>
-        <a className={styles.instagram} href={social.instagram} target="_blank" rel="noopener noreferrer">
+        <SmartLink className={styles.instagram} href={social.instagram}>
           <Icon name="instagram" size={18} />
           Instagram
-        </a>
-        <a className={styles.tiktok} href={social.tiktok} target="_blank" rel="noopener noreferrer">
+        </SmartLink>
+        <SmartLink className={styles.tiktok} href={social.tiktok}>
           <Icon name="tiktok" size={18} />
           TikTok
-        </a>
+        </SmartLink>
       </div>
     </div>
   );

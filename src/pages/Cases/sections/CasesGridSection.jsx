@@ -7,22 +7,34 @@ import styles from './CasesGridSection.module.css';
 export default function CasesGridSection() {
   return (
     <>
-      <div className={styles.grid}>
+      <div className={styles.grid} data-reveal-stagger>
         {successCases.map((item) => (
           <TestimonialCard key={item.institution} {...item} />
         ))}
       </div>
 
-      <div className={styles.clients}>
+      <div className={styles.clients} data-reveal>
         <Badge>Confían en nosotros</Badge>
       </div>
-      <ul className={styles.logos}>
-        {clientLogos.map((client) => (
-          <li key={client.id}>
-            <ImagePlaceholder src={client.logo} alt={client.name} label="LOGO" variant="dashed" height={70} />
-          </li>
-        ))}
-      </ul>
+      {/* Cinta de logos que se desplaza en horizontal. La lista se duplica para que el movimiento sea continuo. */}
+      <div className={styles.marquee} data-reveal="fade">
+        <ul className={styles.track}>
+          {[...clientLogos, ...clientLogos].map((client, index) => (
+            <li key={`${client.id}-${index}`} aria-hidden={index >= clientLogos.length || undefined}>
+              <div className={styles.logoBox}>
+                <ImagePlaceholder
+                  src={client.logo}
+                  alt={index >= clientLogos.length ? '' : `Logo de ${client.name}`}
+                  label="LOGO"
+                  variant="dashed"
+                  height={52}
+                  fit="contain"
+                />
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
     </>
   );
 }

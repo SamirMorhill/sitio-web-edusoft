@@ -1,4 +1,5 @@
 @import './variables.css';
+@import './animations.css';
 
 *,
 *::before,
@@ -18,6 +19,11 @@ body {
   background: var(--color-bg);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Evita scroll horizontal mientras los elementos entran desde los costados */
+main {
+  overflow-x: clip;
 }
 
 img {

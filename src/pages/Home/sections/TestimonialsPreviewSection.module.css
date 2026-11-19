@@ -12,8 +12,40 @@
   font-weight: 600;
 }
 
+.hint {
+  display: none;
+}
+
+/* En celulares y tablets los testimonios pasan a un carrusel que se desliza en horizontal */
 @media (max-width: 900px) {
   .grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--container-padding);
+    margin-inline: calc(var(--container-padding) * -1);
+    padding: 4px var(--container-padding) 18px;
+    scrollbar-width: none;
+  }
+
+  .grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .grid > * {
+    flex: 0 0 min(82%, 420px);
+    scroll-snap-align: start;
+  }
+
+  .hint {
+    display: block;
+    text-align: center;
+    font-size: 13px;
+    color: var(--color-muted);
+  }
+
+  .more {
+    margin-top: 12px;
   }
 }

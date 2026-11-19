@@ -7,7 +7,7 @@ export default function ProcessSteps({ badge, title, lead, steps }) {
     <section className={`section ${styles.section}`}>
       <div className="container">
         <SectionHeading badge={badge} title={title} lead={lead} tone="dark" />
-        <ol className={styles.steps}>
+        <ol className={styles.steps} data-reveal-stagger>
           {steps.map((step, index) => (
             <li key={step.title} className={styles.step}>
               <span className={styles.number}>{index + 1}</span>

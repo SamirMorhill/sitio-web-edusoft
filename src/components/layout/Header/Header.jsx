@@ -1,22 +1,33 @@
 import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { PATHS } from '@/app/paths';
 import { mainNavigation } from '@/data/navigation';
 import { company } from '@/data/company';
 import logo from '@/assets/images/logo-edusoft.jpg';
+import logoWhite from '@/assets/images/logo-edusoft-blanco.png';
 import Button from '@/components/ui/Button/Button';
 import Icon from '@/components/ui/Icon/Icon';
+import ScrollProgress from '@/components/layout/ScrollProgress/ScrollProgress';
+import { useScrollProgress } from '@/hooks/useScrollProgress';
 import styles from './Header.module.css';
+
+/** Páginas con hero de pantalla completa: la cabecera es transparente hasta hacer scroll. */
+const OVERLAY_PATHS = Object.values(PATHS);
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { progress, scrolled } = useScrollProgress();
+  const { pathname } = useLocation();
   const closeMenu = () => setMenuOpen(false);
 
+  const overlay = OVERLAY_PATHS.includes(pathname) && !scrolled && !menuOpen;
+  const headerClasses = [styles.header, scrolled && styles.scrolled, overlay && styles.overlay].filter(Boolean).join(' ');
+
   return (
-    <header className={styles.header}>
+    <header className={headerClasses}>
       <div className={`container ${styles.inner}`}>
         <Link to={PATHS.home} className={styles.brand} onClick={closeMenu}>
-          <img src={logo} alt={`${company.name}, ${company.tagline}`} />
+          <img src={overlay ? logoWhite : logo} alt={`${company.name}, ${company.tagline}`} />
         </Link>
 
         <nav aria-label="Navegación principal">
@@ -51,6 +62,7 @@ export default function Header() {
           </button>
         </div>
       </div>
+      <ScrollProgress progress={progress} />
     </header>
   );
 }

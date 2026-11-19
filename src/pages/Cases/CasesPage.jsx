@@ -1,18 +1,15 @@
 import { PATHS } from '@/app/paths';
-import PageHero from '@/components/ui/PageHero/PageHero';
 import CtaBanner from '@/components/shared/CtaBanner/CtaBanner';
+import CasesHeroSection from './sections/CasesHeroSection';
 import FeaturedTestimonial from './sections/FeaturedTestimonial';
 import CasesGridSection from './sections/CasesGridSection';
+import styles from './CasesPage.module.css';
 
 export default function CasesPage() {
   return (
     <>
-      <PageHero
-        breadcrumb="Casos de éxito"
-        title="Casos de éxito"
-        text="Instituciones que ya trabajan con EduSoft y los resultados que lograron."
-      />
-      <section className="section">
+      <CasesHeroSection />
+      <section id="casos" className={`section ${styles.cases}`}>
         <div className="container">
           <FeaturedTestimonial />
           <CasesGridSection />

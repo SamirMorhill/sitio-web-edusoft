@@ -9,7 +9,7 @@ export default function AboutPreviewSection() {
   return (
     <section className="section section--soft">
       <div className={`container ${styles.grid}`}>
-        <div>
+        <div data-reveal="left">
           <SectionHeading
             align="left"
             badge="Quiénes somos"
@@ -20,7 +20,7 @@ export default function AboutPreviewSection() {
             Conocé más sobre EduSoft
           </Button>
         </div>
-        <div className={styles.cards}>
+        <div className={styles.cards} data-reveal-stagger="right">
           <MissionVisionCard icon="target" title="Misión" text={company.missionShort} surface="white" />
           <MissionVisionCard icon="eye" title="Visión" text={company.visionShort} variant="lavender" surface="white" />
         </div>

@@ -1,0 +1,119 @@
+.scene {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 500px;
+  margin-left: auto;
+}
+
+.card {
+  padding: 28px;
+  border-radius: 22px;
+  background: #fff;
+  color: var(--color-ink);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+  animation: float 7s ease-in-out 0.6s infinite;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.cardHeader b {
+  display: block;
+  font-size: 17px;
+  color: var(--color-purple);
+}
+
+.cardHeader small {
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+.cardIcon {
+  width: 44px;
+  height: 44px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--color-teal-soft);
+  color: var(--color-teal-dark);
+}
+
+.steps {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+}
+
+.steps li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-weight: 600;
+  color: var(--color-purple);
+}
+
+.number {
+  width: 34px;
+  height: 34px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--color-lavender-soft);
+  color: var(--color-purple);
+  font-size: 14px;
+}
+
+.steps li:last-child .number {
+  background: var(--color-teal);
+  color: #fff;
+}
+
+.channels {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.channels li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(6px);
+  font-size: 15px;
+  color: #fff;
+  animation: float 6s ease-in-out infinite;
+}
+
+.channels li:nth-child(1) {
+  animation-delay: 1.2s;
+  margin-right: 40px;
+}
+
+.channels li:nth-child(2) {
+  animation-delay: 1.8s;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.channels li:nth-child(3) {
+  animation-delay: 2.4s;
+  margin-left: 40px;
+}
+
+.channels li svg {
+  color: var(--color-teal-bright);
+  flex: none;
+}

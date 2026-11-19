@@ -11,7 +11,7 @@ export default function ObjectivesSection() {
           title="Hacia dónde vamos"
           lead="Metas concretas que guían nuestro trabajo durante el primer año."
         />
-        <div className={styles.grid}>
+        <div className={styles.grid} data-reveal-stagger>
           {objectives.map((objective) => (
             <article key={objective.title} className={styles.goal}>
               <span className={`${styles.badge} ${objective.badge.length > 4 ? styles.badgeSmall : ''}`}>

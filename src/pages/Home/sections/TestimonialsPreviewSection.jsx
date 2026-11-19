@@ -12,7 +12,7 @@ export default function TestimonialsPreviewSection() {
         <SectionHeading badge="Casos de éxito" title="Lo que dicen las instituciones" />
         <div className={styles.grid}>
           {successCases.map((item) => (
-            <TestimonialCard key={item.institution} quote={item.quote} author={item.author} logo={item.logo} />
+            <TestimonialCard key={item.institution} {...item} compact />
           ))}
         </div>
         <p className={styles.more}>

@@ -1,6 +1,13 @@
 .image {
   width: 100%;
+}
+
+.cover {
   object-fit: cover;
+}
+
+.contain {
+  object-fit: contain;
 }
 
 .placeholder {

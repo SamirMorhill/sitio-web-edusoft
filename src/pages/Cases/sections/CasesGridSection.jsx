@@ -19,7 +19,16 @@ export default function CasesGridSection() {
       <ul className={styles.logos}>
         {clientLogos.map((client) => (
           <li key={client.id}>
-            <ImagePlaceholder src={client.logo} alt={client.name} label="LOGO" variant="dashed" height={70} />
+            <div className={styles.logoBox}>
+              <ImagePlaceholder
+                src={client.logo}
+                alt={`Logo de ${client.name}`}
+                label="LOGO"
+                variant="dashed"
+                height={52}
+                fit="contain"
+              />
+            </div>
           </li>
         ))}
       </ul>

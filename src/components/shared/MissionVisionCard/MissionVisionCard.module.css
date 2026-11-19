@@ -1,0 +1,39 @@
+.card {
+  border-radius: var(--radius-lg);
+  padding: 26px 28px;
+  border-left: 5px solid var(--accent);
+}
+
+.teal {
+  --accent: var(--color-teal);
+}
+
+.lavender {
+  --accent: var(--color-lavender);
+}
+
+.soft {
+  background: var(--color-bg-soft);
+}
+
+.white {
+  background: #fff;
+}
+
+.title {
+  color: var(--color-purple);
+  font-size: 19px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon {
+  color: var(--accent);
+}
+
+.text {
+  color: var(--color-muted);
+  font-size: 15px;
+}

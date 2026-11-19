@@ -1,0 +1,43 @@
+.wrapper {
+  margin-top: 40px;
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+.table th,
+.table td {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  font-size: 15px;
+}
+
+.table th {
+  background: var(--color-purple);
+  color: #fff;
+  font-weight: 600;
+}
+
+.table .center {
+  text-align: center;
+}
+
+.yes {
+  color: var(--color-teal);
+}
+
+.yes svg {
+  stroke-width: 2.6;
+  vertical-align: middle;
+}
+
+.no {
+  color: #c9c4d8;
+}

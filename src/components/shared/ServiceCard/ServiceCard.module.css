@@ -1,0 +1,61 @@
+.card {
+  background: #fff;
+  border-radius: var(--radius-xl);
+  padding: 36px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 6px;
+  background: var(--accent);
+}
+
+.teal {
+  --accent: var(--color-teal);
+  --accent-soft: var(--color-teal-soft);
+}
+
+.lavender {
+  --accent: var(--color-lavender);
+  --accent-soft: var(--color-lavender-soft);
+}
+
+.icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: var(--accent-soft);
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+
+.tag {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.title {
+  font-size: 23px;
+  color: var(--color-purple);
+  line-height: 1.3;
+}
+
+.text {
+  color: var(--color-muted);
+  margin: 10px 0 18px;
+}
+
+.more {
+  color: var(--color-teal);
+  font-weight: 600;
+}

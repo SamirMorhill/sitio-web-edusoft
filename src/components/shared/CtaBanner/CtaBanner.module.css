@@ -1,0 +1,26 @@
+.banner {
+  background: linear-gradient(135deg, var(--color-teal), #0b6f65);
+  color: #fff;
+  border-radius: 24px;
+  padding: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.text {
+  color: #d5f1ec;
+}
+
+@media (max-width: 900px) {
+  .banner {
+    padding: 32px;
+  }
+}

@@ -1,0 +1,30 @@
+.image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.placeholder {
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  font-size: 12px;
+  text-align: center;
+}
+
+.solid {
+  background: var(--color-lavender-soft);
+  color: var(--color-lavender);
+  font-size: 14px;
+}
+
+.striped {
+  border-radius: var(--radius-sm);
+  background: repeating-linear-gradient(45deg, #e7e3f3, #e7e3f3 8px, #f1eef9 8px, #f1eef9 16px);
+  color: var(--color-muted);
+}
+
+.dashed {
+  border-radius: 12px;
+  border: 1.5px dashed #d9d4ea;
+  color: #a79fc2;
+}

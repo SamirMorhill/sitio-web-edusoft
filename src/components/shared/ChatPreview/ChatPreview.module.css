@@ -1,0 +1,54 @@
+.body {
+  padding: 22px;
+  display: grid;
+  gap: 12px;
+  min-height: 280px;
+  align-content: start;
+}
+
+.message {
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 13px;
+}
+
+.received {
+  background: var(--color-lavender-soft);
+  width: 75%;
+}
+
+.sent {
+  background: var(--color-teal);
+  color: #fff;
+  width: 60%;
+  justify-self: end;
+}
+
+.poll {
+  background: var(--color-bg-soft);
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.poll b {
+  font-size: 13px;
+  color: var(--color-purple);
+}
+
+.optionA,
+.optionB {
+  height: 10px;
+  border-radius: 5px;
+}
+
+.optionA {
+  background: var(--color-teal);
+  width: 72%;
+  margin-top: 10px;
+}
+
+.optionB {
+  background: var(--color-lavender);
+  width: 40%;
+  margin-top: 8px;
+}

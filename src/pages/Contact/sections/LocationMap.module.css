@@ -1,0 +1,25 @@
+.map {
+  border-radius: var(--radius-xl);
+  height: 300px;
+  display: grid;
+  place-items: center;
+  background-color: var(--color-bg-soft);
+  background-image: linear-gradient(#e8e5f2 1px, transparent 1px), linear-gradient(90deg, #e8e5f2 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.pin {
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding: 14px 20px;
+  box-shadow: 0 10px 30px rgba(62, 42, 92, 0.15);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: var(--color-purple);
+  font-weight: 600;
+}
+
+.pinIcon {
+  color: var(--color-teal);
+}

@@ -1,0 +1,18 @@
+.badge {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.3px;
+}
+
+.light {
+  background: var(--color-lavender-soft);
+  color: var(--color-purple);
+}
+
+.dark {
+  background: rgba(255, 255, 255, 0.12);
+  color: #dcd6ff;
+}

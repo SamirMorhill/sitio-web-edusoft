@@ -1,0 +1,80 @@
+.body {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  min-height: 280px;
+}
+
+.sidebar {
+  background: var(--color-purple);
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar div {
+  height: 9px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.sidebar .active {
+  background: var(--color-teal-bright);
+}
+
+.main {
+  padding: 18px;
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.kpi {
+  background: var(--color-bg-soft);
+  border-radius: var(--radius-sm);
+  padding: 10px;
+}
+
+.kpi b {
+  display: block;
+  font-size: 20px;
+  color: var(--color-purple);
+}
+
+.kpi small {
+  font-size: 11px;
+  color: var(--color-muted);
+}
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 90px;
+  background: var(--color-bg-soft);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+}
+
+.bars span {
+  flex: 1;
+  border-radius: 4px 4px 0 0;
+  background: var(--color-lavender);
+}
+
+.bars span:nth-child(even) {
+  background: var(--color-teal);
+}
+
+.rows div {
+  height: 10px;
+  border-radius: 5px;
+  background: #eceaf3;
+  margin-bottom: 8px;
+}

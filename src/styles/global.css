@@ -21,6 +21,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Evita scroll horizontal mientras los elementos entran desde los costados */
+main {
+  overflow-x: clip;
+}
+
 img {
   max-width: 100%;
   display: block;

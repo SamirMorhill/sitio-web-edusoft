@@ -16,7 +16,7 @@ function Stat({ value, label }) {
 /** Barra de cifras destacadas que se superpone al hero. Las cifras cuentan hacia arriba al aparecer. */
 export default function StatsBar({ stats }) {
   return (
-    <section className={styles.wrapper} aria-label="Cifras destacadas">
+    <section id="contenido" className={styles.wrapper} aria-label="Cifras destacadas">
       <div className="container">
         <dl className={styles.grid} data-reveal="up">
           {stats.map((stat) => (

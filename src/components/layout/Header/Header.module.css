@@ -7,7 +7,32 @@
   border-bottom: 1px solid #eee;
   transition:
     box-shadow 0.3s ease,
-    background 0.3s ease;
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Modo transparente sobre el hero de Inicio */
+.overlay {
+  background: transparent;
+  backdrop-filter: none;
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+.overlay .menu {
+  color: #fff;
+}
+
+.overlay .link:hover,
+.overlay .active {
+  color: var(--color-teal-bright);
+}
+
+.overlay .active::after {
+  background: var(--color-teal-bright);
+}
+
+.overlay .toggle {
+  color: #fff;
 }
 
 .scrolled {

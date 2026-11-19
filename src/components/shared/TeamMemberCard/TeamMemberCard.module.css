@@ -64,3 +64,15 @@
   font-style: italic;
   line-height: 1.55;
 }
+
+.photo {
+  transition: transform 0.6s var(--ease-out);
+}
+
+.photoBox {
+  overflow: hidden;
+}
+
+.card:hover .photo {
+  transform: scale(1.04);
+}

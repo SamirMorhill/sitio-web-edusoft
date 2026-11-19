@@ -34,7 +34,7 @@ export default function ProductSection({ service, reversed = false }) {
     <section id={service.id} className={classes} style={getBrandStyle(service.brand)}>
       <div className="container">
         <div className={styles.intro}>
-          <div className={styles.content}>
+          <div className={styles.content} data-reveal={reversed ? 'right' : 'left'}>
             <div className={styles.heading}>
               {service.logo && <img src={service.logo} alt="" className={styles.logo} />}
               <Badge>{service.tag}</Badge>
@@ -59,12 +59,12 @@ export default function ProductSection({ service, reversed = false }) {
             </div>
           </div>
 
-          <BrowserMockup elevated="soft" className={styles.preview}>
+          <BrowserMockup elevated="soft" className={styles.preview} data-reveal={reversed ? 'left' : 'right'}>
             <ProductPreview service={service} />
           </BrowserMockup>
         </div>
 
-        <ul className={styles.features} aria-label={`Funciones de ${service.name}`}>
+        <ul className={styles.features} aria-label={`Funciones de ${service.name}`} data-reveal-stagger>
           {service.features.map((feature) => (
             <li key={feature.title} className={styles.feature}>
               <span className={styles.featureIcon}>

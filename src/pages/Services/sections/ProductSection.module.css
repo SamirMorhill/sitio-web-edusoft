@@ -211,3 +211,31 @@
     height: 38px;
   }
 }
+
+/* Efecto al pasar el mouse */
+.feature {
+  transition:
+    transform 0.25s var(--ease-out),
+    box-shadow 0.25s var(--ease-out);
+}
+
+.feature:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card);
+}
+
+.feature:hover .featureIcon {
+  transform: scale(1.08) rotate(-4deg);
+}
+
+.featureIcon {
+  transition: transform 0.25s var(--ease-out);
+}
+
+.screenshot {
+  transition: transform 0.6s var(--ease-out);
+}
+
+.preview:hover .screenshot {
+  transform: scale(1.03);
+}

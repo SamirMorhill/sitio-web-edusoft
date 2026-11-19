@@ -1,16 +1,26 @@
+import { useCountUp } from '@/hooks/useCountUp';
 import styles from './StatsBar.module.css';
 
-/** Barra de cifras destacadas que se superpone al hero. */
+function Stat({ value, label }) {
+  const [ref, display] = useCountUp(value);
+  return (
+    <div className={styles.stat}>
+      <dt className={styles.value} ref={ref} aria-label={value}>
+        {display}
+      </dt>
+      <dd className={styles.label}>{label}</dd>
+    </div>
+  );
+}
+
+/** Barra de cifras destacadas que se superpone al hero. Las cifras cuentan hacia arriba al aparecer. */
 export default function StatsBar({ stats }) {
   return (
     <section className={styles.wrapper} aria-label="Cifras destacadas">
       <div className="container">
-        <dl className={styles.grid}>
+        <dl className={styles.grid} data-reveal="up">
           {stats.map((stat) => (
-            <div key={stat.label} className={styles.stat}>
-              <dt className={styles.value}>{stat.value}</dt>
-              <dd className={styles.label}>{stat.label}</dd>
-            </div>
+            <Stat key={stat.label} {...stat} />
           ))}
         </dl>
       </div>

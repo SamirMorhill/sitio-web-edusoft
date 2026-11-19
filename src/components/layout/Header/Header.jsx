@@ -6,14 +6,17 @@ import { company } from '@/data/company';
 import logo from '@/assets/images/logo-edusoft.jpg';
 import Button from '@/components/ui/Button/Button';
 import Icon from '@/components/ui/Icon/Icon';
+import ScrollProgress from '@/components/layout/ScrollProgress/ScrollProgress';
+import { useScrollProgress } from '@/hooks/useScrollProgress';
 import styles from './Header.module.css';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { progress, scrolled } = useScrollProgress();
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.inner}`}>
         <Link to={PATHS.home} className={styles.brand} onClick={closeMenu}>
           <img src={logo} alt={`${company.name}, ${company.tagline}`} />
@@ -51,6 +54,7 @@ export default function Header() {
           </button>
         </div>
       </div>
+      <ScrollProgress progress={progress} />
     </header>
   );
 }

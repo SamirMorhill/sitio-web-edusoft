@@ -9,7 +9,7 @@ import styles from './LocationMap.module.css';
 export default function LocationMap() {
   return (
     <section className="section section--flush-top">
-      <div className="container">
+      <div className="container" data-reveal>
         <div className={styles.map}>
           <div className={styles.pin}>
             <Icon name="mapPin" size={22} className={styles.pinIcon} />

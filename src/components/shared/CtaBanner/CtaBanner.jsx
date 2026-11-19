@@ -6,7 +6,7 @@ export default function CtaBanner({ title, text, buttonLabel, to }) {
   return (
     <section className="section section--flush-top">
       <div className="container">
-        <div className={styles.banner}>
+        <div className={styles.banner} data-reveal="zoom">
           <div>
             <h2 className={styles.title}>{title}</h2>
             <p className={styles.text}>{text}</p>

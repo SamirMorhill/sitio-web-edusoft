@@ -7,7 +7,7 @@ export default function FaqSection() {
     <section className="section">
       <div className="container">
         <SectionHeading badge="Preguntas frecuentes" title="Lo que suelen preguntarnos" />
-        <div className={styles.list}>
+        <div className={styles.list} data-reveal-stagger>
           {servicesFaq.map((item, index) => (
             <details key={item.question} className={styles.item} open={index === 0}>
               <summary className={styles.question}>{item.question}</summary>

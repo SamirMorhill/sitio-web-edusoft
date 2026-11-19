@@ -5,6 +5,22 @@
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid #eee;
+  transition:
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 8px 24px rgba(62, 42, 92, 0.08);
+}
+
+.brand img {
+  transition: height 0.3s ease;
+}
+
+.scrolled .brand img {
+  height: 40px;
 }
 
 .inner {
@@ -12,6 +28,11 @@
   align-items: center;
   justify-content: space-between;
   height: var(--header-height);
+  transition: height 0.3s ease;
+}
+
+.scrolled .inner {
+  height: calc(var(--header-height) - 10px);
 }
 
 .brand img {
@@ -64,8 +85,13 @@
 }
 
 @media (max-width: 900px) {
-  .brand img {
+  .brand img,
+  .scrolled .brand img {
     height: 38px;
+  }
+
+  .scrolled .inner {
+    height: var(--header-height);
   }
 
   .toggle {
@@ -75,7 +101,7 @@
   .menu {
     display: none;
     position: absolute;
-    top: var(--header-height);
+    top: 100%;
     left: 0;
     right: 0;
     flex-direction: column;

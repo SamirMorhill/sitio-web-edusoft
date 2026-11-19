@@ -10,11 +10,14 @@ export default function TestimonialsPreviewSection() {
     <section className="section">
       <div className="container">
         <SectionHeading badge="Casos de éxito" title="Lo que dicen las instituciones" />
-        <div className={styles.grid}>
+        <div className={styles.grid} data-reveal-stagger>
           {successCases.map((item) => (
             <TestimonialCard key={item.institution} {...item} compact />
           ))}
         </div>
+        <p className={styles.hint} aria-hidden="true">
+          Deslizá para ver más
+        </p>
         <p className={styles.more}>
           <Link to={PATHS.cases}>Ver todos los casos</Link>
         </p>

@@ -60,3 +60,15 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Efecto al pasar el mouse */
+.value {
+  transition:
+    transform 0.25s var(--ease-out),
+    box-shadow 0.25s var(--ease-out);
+}
+
+.value:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card);
+}

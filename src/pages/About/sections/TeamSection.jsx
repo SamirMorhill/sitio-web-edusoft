@@ -8,7 +8,7 @@ export default function TeamSection() {
     <section className="section section--soft">
       <div className="container">
         <SectionHeading badge="Equipo" title="Las personas detrás de EduSoft" />
-        <ul className={styles.grid}>
+        <ul className={styles.grid} data-reveal-stagger>
           {team.map((member) => (
             <li key={member.name}>
               <TeamMemberCard {...member} />

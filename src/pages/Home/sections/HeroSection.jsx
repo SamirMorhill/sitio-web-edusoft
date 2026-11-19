@@ -9,7 +9,7 @@ export default function HeroSection() {
   return (
     <section className={styles.hero}>
       <div className={`container ${styles.grid}`}>
-        <div>
+        <div className="enter">
           <Badge tone="dark">Software educativo · San Miguel de Tucumán</Badge>
           <h1 className={styles.title}>
             Tecnología que <span>simplifica</span> la gestión de tu institución educativa
@@ -25,9 +25,13 @@ export default function HeroSection() {
             </Button>
           </div>
         </div>
-        <BrowserMockup>
-          <DashboardPreview />
-        </BrowserMockup>
+        <div className="enter enter--right" style={{ '--enter-delay': '200ms' }}>
+          <div className={styles.float}>
+            <BrowserMockup>
+              <DashboardPreview />
+            </BrowserMockup>
+          </div>
+        </div>
       </div>
     </section>
   );

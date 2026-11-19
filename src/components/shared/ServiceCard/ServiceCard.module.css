@@ -87,3 +87,15 @@
 .branded .more {
   color: var(--brand-primary);
 }
+
+/* Efecto al pasar el mouse */
+.card {
+  transition:
+    transform 0.25s var(--ease-out),
+    box-shadow 0.25s var(--ease-out);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-raised);
+}

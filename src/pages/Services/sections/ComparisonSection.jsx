@@ -8,7 +8,7 @@ export default function ComparisonSection() {
     <section className="section">
       <div className="container">
         <SectionHeading badge="Comparativa" title="¿Qué incluye cada plataforma?" />
-        <div className={styles.wrapper}>
+        <div className={styles.wrapper} data-reveal>
           <table className={styles.table}>
             <thead>
               <tr>

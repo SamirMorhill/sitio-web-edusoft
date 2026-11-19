@@ -13,7 +13,7 @@ export default function ContactInfo() {
   ];
 
   return (
-    <div>
+    <div data-reveal="left">
       <SectionHeading
         align="left"
         badge="Datos de contacto"

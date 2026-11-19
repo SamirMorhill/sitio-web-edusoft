@@ -1,6 +1,9 @@
+import { NOT_FOUND_PATH } from '@/app/paths';
+
 /**
  * Datos institucionales de EduSoft.
  * TODO: reemplazar los valores marcados como [placeholder] por los datos reales.
+ * Los enlaces ficticios apuntan a la página 404 (NOT_FOUND_PATH) hasta tener las cuentas reales.
  */
 export const company = {
   name: 'EduSoft',
@@ -27,12 +30,12 @@ export const company = {
   visionShort: 'Ser la empresa líder en soluciones tecnológicas educativas del Norte Argentino.',
   contact: {
     email: 'contacto@edusoft.com.ar', // [placeholder]
-    whatsapp: '381 XXX XXXX', // [placeholder]
-    whatsappUrl: 'https://wa.me/549381XXXXXXX', // [placeholder]
+    whatsapp: '+54 9 381 555-0142', // [placeholder] número ficticio
+    whatsappUrl: NOT_FOUND_PATH, // [placeholder] real: 'https://wa.me/549381XXXXXXX'
     hours: 'Lunes a viernes de 8 a 18 h', // [placeholder]
   },
   social: {
-    instagram: 'https://instagram.com/edusoft', // [placeholder]
-    tiktok: 'https://tiktok.com/@edusoft', // [placeholder]
+    instagram: NOT_FOUND_PATH, // [placeholder] real: 'https://instagram.com/<cuenta>'
+    tiktok: NOT_FOUND_PATH, // [placeholder] real: 'https://tiktok.com/@<cuenta>'
   },
 };

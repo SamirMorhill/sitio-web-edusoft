@@ -6,7 +6,7 @@ import ServicesPage from '@/pages/Services/ServicesPage';
 import CasesPage from '@/pages/Cases/CasesPage';
 import ContactPage from '@/pages/Contact/ContactPage';
 import NotFoundPage from '@/pages/NotFound/NotFoundPage';
-import { PATHS } from './paths';
+import { NOT_FOUND_PATH, PATHS } from './paths';
 
 export const router = createBrowserRouter([
   {
@@ -18,6 +18,7 @@ export const router = createBrowserRouter([
       { path: PATHS.services, element: <ServicesPage /> },
       { path: PATHS.cases, element: <CasesPage /> },
       { path: PATHS.contact, element: <ContactPage /> },
+      { path: NOT_FOUND_PATH, element: <NotFoundPage /> },
       { path: '*', element: <NotFoundPage /> },
     ],
   },

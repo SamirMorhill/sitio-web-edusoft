@@ -1,3 +1,6 @@
+import fotoRocio from '@/assets/images/team/rocio-cristo-ochi.jpg';
+import fotoSamir from '@/assets/images/team/samir-morhill.jpg';
+
 export const values = [
   { icon: 'zap', title: 'Innovación', text: 'Buscamos siempre la mejor forma de resolver problemas reales del aula.' },
   { icon: 'users', title: 'Accesibilidad', text: 'Herramientas simples que cualquier docente puede usar desde el primer día.' },
@@ -29,12 +32,12 @@ export const objectives = [
 ];
 
 /**
- * Equipo. Para agregar la foto, importarla desde src/assets/images/team
- * y asignarla en `photo` (ej: photo: fotoMaria).
+ * Equipo. Ordenado según el recorrido de un proyecto: análisis, diseño y desarrollo.
+ * Para agregar o cambiar una foto, guardarla en src/assets/images/team (formato 4:5)
+ * y asignarla en `photo`. Si `photo` es null se muestran las iniciales.
  */
 export const team = [
-  { name: '[Nombre]', role: 'Dirección general', photo: null },
-  { name: '[Nombre]', role: 'Desarrollo de software', photo: null },
-  { name: '[Nombre]', role: 'Diseño y experiencia de usuario', photo: null },
-  { name: '[Nombre]', role: 'Atención a instituciones', photo: null },
+  { name: 'Brenda Luciana Marinelli', role: 'Analista Funcional', photo: null },
+  { name: 'Rocío Cristo Ochi', role: 'Diseño y experiencia', photo: fotoRocio },
+  { name: 'Samir Ricardo Morhill', role: 'Desarrollador', photo: fotoSamir },
 ];

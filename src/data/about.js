@@ -34,10 +34,25 @@ export const objectives = [
 /**
  * Equipo. Ordenado según el recorrido de un proyecto: análisis, diseño y desarrollo.
  * Para agregar o cambiar una foto, guardarla en src/assets/images/team (formato 4:5)
- * y asignarla en `photo`. Si `photo` es null se muestran las iniciales.
+ * y asignarla en `photo`. `quote` es la frase que se muestra debajo del rol. Si `photo` es null se muestran las iniciales.
  */
 export const team = [
-  { name: 'Brenda Luciana Marinelli', role: 'Analista Funcional', photo: null },
-  { name: 'Rocío Cristo Ochi', role: 'Diseño y experiencia', photo: fotoRocio },
-  { name: 'Samir Ricardo Morhill', role: 'Desarrollador', photo: fotoSamir },
+  {
+    name: 'Brenda Luciana Marinelli',
+    role: 'Analista Funcional',
+    quote: 'En EduSoft, cada solución empieza por escuchar a la escuela.',
+    photo: null,
+  },
+  {
+    name: 'Rocío Cristo Ochi',
+    role: 'Diseño y experiencia',
+    quote: 'En EduSoft diseñamos para que la tecnología se sienta simple en el aula.',
+    photo: fotoRocio,
+  },
+  {
+    name: 'Samir Ricardo Morhill',
+    role: 'Desarrollador',
+    quote: 'En EduSoft, cada línea de código busca dar más tiempo para enseñar.',
+    photo: fotoSamir,
+  },
 ];

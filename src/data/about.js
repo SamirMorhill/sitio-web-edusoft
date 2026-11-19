@@ -1,3 +1,4 @@
+import fotoBrenda from '@/assets/images/team/brenda-marinelli.jpg';
 import fotoRocio from '@/assets/images/team/rocio-cristo-ochi.jpg';
 import fotoSamir from '@/assets/images/team/samir-morhill.jpg';
 
@@ -41,7 +42,7 @@ export const team = [
     name: 'Brenda Luciana Marinelli',
     role: 'Analista Funcional',
     quote: 'En EduSoft, cada solución empieza por escuchar a la escuela.',
-    photo: null,
+    photo: fotoBrenda,
   },
   {
     name: 'Rocío Cristo Ochi',

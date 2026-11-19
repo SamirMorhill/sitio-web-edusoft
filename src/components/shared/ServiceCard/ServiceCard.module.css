@@ -55,6 +55,12 @@
   margin: 10px 0 18px;
 }
 
+.links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
 .more {
   color: var(--color-teal);
   font-weight: 600;

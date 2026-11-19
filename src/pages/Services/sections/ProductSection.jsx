@@ -4,7 +4,6 @@ import Button from '@/components/ui/Button/Button';
 import Icon from '@/components/ui/Icon/Icon';
 import BrowserMockup from '@/components/ui/BrowserMockup/BrowserMockup';
 import DashboardPreview from '@/components/shared/DashboardPreview/DashboardPreview';
-import ChatPreview from '@/components/shared/ChatPreview/ChatPreview';
 import { getBrandStyle } from '@/utils/brandStyle';
 import styles from './ProductSection.module.css';
 
@@ -18,7 +17,6 @@ function ProductPreview({ service }) {
   if (service.preview === 'screenshot') {
     return <img className={styles.screenshot} src={service.screenshot} alt={service.screenshotAlt} loading="lazy" />;
   }
-  if (service.preview === 'chat') return <ChatPreview />;
   return <DashboardPreview kpis={DASHBOARD_KPIS} showChart={false} rows={[100, 100, 100, 100, 60]} />;
 }
 
@@ -61,9 +59,16 @@ export default function ProductSection({ service, reversed = false }) {
         <p className={styles.audience}>
           <b>Ideal para:</b> {service.audience}
         </p>
-        <Button to={PATHS.contact} variant={reversed ? 'purple' : 'teal'} className={styles.cta}>
-          Solicitar demo
-        </Button>
+        <div className={styles.actions}>
+          <Button to={PATHS.contact} variant={reversed ? 'purple' : 'teal'} className={styles.cta}>
+            Solicitar demo
+          </Button>
+          {service.demoUrl && (
+            <Button href={service.demoUrl} variant="outline" className={styles.demo}>
+              Probar la app
+            </Button>
+          )}
+        </div>
       </div>
 
       <BrowserMockup elevated="soft">

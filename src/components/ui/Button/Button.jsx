@@ -6,7 +6,7 @@ import styles from './Button.module.css';
  * - `to`: navega dentro del sitio (React Router).
  * - `href`: enlace externo.
  * - sin ninguno: <button>.
- * variant: 'teal' | 'purple' | 'ghost' | 'white'
+ * variant: 'teal' | 'purple' | 'ghost' | 'white' | 'outline'
  */
 export default function Button({ to, href, variant = 'teal', size = 'md', className = '', children, ...rest }) {
   const classes = [styles.button, styles[variant], styles[size], className].filter(Boolean).join(' ');

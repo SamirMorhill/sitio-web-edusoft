@@ -22,6 +22,7 @@ export const icons = {
   smartphone: <><rect x="5" y="2" width="14" height="20" rx="2" /><path d="M12 18h.01" /></>,
   qr: <><rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" /><rect x="3" y="14" width="7" height="7" rx="1" /><path d="M14 14h3v3M21 14v.01M17 21h4v-4M14 18v3" /></>,
   building: <><rect x="5" y="2" width="14" height="20" rx="2" /><path d="M9 6h2M13 6h2M9 10h2M13 10h2M9 14h2M13 14h2M10 22v-4h4v4" /></>,
+  alert: <><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z" /><path d="M12 9v4M12 17h.01" /></>,
   menu: <path d="M3 6h18M3 12h18M3 18h18" />,
   close: <path d="M18 6 6 18M6 6l12 12" />,
   arrowRight: <path d="M5 12h14M13 6l6 6-6 6" />,

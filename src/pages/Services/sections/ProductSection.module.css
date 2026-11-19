@@ -93,6 +93,12 @@
   display: block;
 }
 
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
 /* Sección con los colores propios de la aplicación (ej: SCAD) */
 .branded .title,
 .branded .features b {
@@ -106,6 +112,11 @@
 .branded .cta {
   background: var(--brand-primary);
   box-shadow: none;
+}
+
+.branded .demo {
+  color: var(--brand-primary);
+  border-color: var(--brand-primary);
 }
 
 .branded .cta:hover {

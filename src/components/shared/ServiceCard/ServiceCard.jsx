@@ -22,9 +22,16 @@ export default function ServiceCard({ service }) {
         {service.shortName} · {service.category}
       </h3>
       <p className={styles.text}>{service.summary}</p>
-      <Link className={styles.more} to={`${PATHS.services}#${service.id}`}>
-        Ver detalle
-      </Link>
+      <div className={styles.links}>
+        <Link className={styles.more} to={`${PATHS.services}#${service.id}`}>
+          Ver detalle
+        </Link>
+        {service.demoUrl && (
+          <a className={styles.more} href={service.demoUrl} target="_blank" rel="noopener noreferrer">
+            Probar la app
+          </a>
+        )}
+      </div>
     </article>
   );
 }
